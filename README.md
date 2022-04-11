@@ -1,4 +1,4 @@
-##CI/CD pipelines for ASP.NET 4.8 with AWS CodePipeline and AWS EC2 Instance 
+## CI/CD pipelines for ASP.NET 4.8 with AWS CodePipeline and AWS EC2 Instance 
 
  
 
