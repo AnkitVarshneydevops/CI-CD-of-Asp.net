@@ -1,4 +1,4 @@
-CI/CD pipelines for ASP.NET 4.8 with AWS CodePipeline and AWS EC2 Instance 
+##CI/CD pipelines for ASP.NET 4.8 with AWS CodePipeline and AWS EC2 Instance 
 
  
 
@@ -43,7 +43,7 @@ env:
 
   variables: 
 
-    PROJECT: Splash360V2MDA\Splash360V2MDA 
+    PROJECT: test 
 
     DOTNET_FRAMEWORK: 4.8 
 
@@ -114,13 +114,13 @@ exit $lastexitcode
 } 
 $webAppName = "MyWebApp" 
 
-$website = "app-qa.sales.garden" 
+$website = "test" 
 
 $webAppPath = "C:\Users\Administrator\jenkins\" 
 
-# Stop IIS Server  
+ Stop IIS Server  
 
-Stop-IISSite -Name " app-qa.sales.garden"  
+Stop-IISSite -Name "Default Website"  
 
 if (-not (Test-Path $webAppPath)) 
 
@@ -134,11 +134,11 @@ New-Item -ItemType directory -Path $webAppPath
 
 } 
 
-Copy-Item -Path "C:\Users\Administrator\jenkins\Splash360V2MDA\*" -Destination "C:\inetpub\wwwroot\ app-qa.sales.garden " -Recurse 
+Copy-Item -Path "C:\Users\Administrator\jenkins\*" -Destination "C:\inetpub\wwwroot\test " -Recurse 
 
-# Start IIS Server 
+ Start IIS Server 
 
-Start-IISSite -Name " app-qa.sales.garden" 
+Start-IISSite -Name "Default Website" 
 
  
 
